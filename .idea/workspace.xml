@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="" />
+    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oh hi mark.html" beforeDir="false" afterPath="$PROJECT_DIR$/oh hi mark.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,8 +26,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1eUg7sjzlfQBNKhJI9FUVDFLdTf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -45,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594381420182</updated>
-      <workItem from="1594381421481" duration="747000" />
+      <workItem from="1594381421481" duration="1189000" />
     </task>
     <servers />
   </component>
@@ -53,13 +62,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594383900504">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
     <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1594381512852">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594381512852" />
-    <state x="461" y="182" key="SettingsEditor" timestamp="1594383429855">
+    <state x="461" y="182" key="SettingsEditor" timestamp="1594383830399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383429855" />
+    <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1594383923054">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594383923054" />
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594383749353">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594383749353" />
+    <state x="655" y="331" key="git4idea.merge.GitPullDialog" timestamp="1594383620768">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="655" y="331" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594383620768" />
   </component>
 </project>
