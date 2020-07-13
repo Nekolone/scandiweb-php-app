@@ -1,0 +1,74 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Open Sans, serif;
+    font-size: 15px;
+    color: black;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666666;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.content__box{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.button {
+padding: 5px;
+
+    text-align: center;
+
+
+    border: 1px solid #000;
+    text-decoration: none;
+
+
+    transition: color 0.1s linear, background-color 0.2s linear;
+}
+
+.button:hover {
+
+    background-color: #000;
+    color: #fff;
+
+}
+
+
+
+/*
+    PRODUCT LIST
+ */
+header .container{
+    background-color: #bbbbbb;
+}
+
+header .container .content__box{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
