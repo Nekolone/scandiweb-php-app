@@ -1,5 +1,5 @@
+DROP DATABASE IF EXISTS shopdb;
 CREATE DATABASE shopdb;
-
 USE shopdb;
 
 CREATE TABLE Product (
