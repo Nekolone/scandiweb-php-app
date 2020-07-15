@@ -7,13 +7,13 @@ CREATE TABLE Product (
   Name varchar(255),
   AddTime timestamp,
   Price decimal,
-  Type int,
+  Type int
 );
 
 CREATE TABLE TypeSize (
   SKU varchar(8),
-  Size int,
- );
+  Size int
+);
  
 CREATE TABLE TypeHWL (
   SKU varchar(8),
