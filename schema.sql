@@ -12,17 +12,17 @@ CREATE TABLE product as P {
 
 CREATE TABLE typeSize as TS {
   SKU varchar(8),
-  size int,
+  itemSize int,
  };
  
 CREATE TABLE typeHWL as THWL{
   SKU varchar(8),
-  height int,
-  width int,
-  length int 
+  itemHeight int,
+  itemWidth int,
+  itemLength int 
 };
 
 CREATE TABLE typeWeigth as TW{
   SKU varchar(8),
-  weight int
+  itemWeight int
 };
