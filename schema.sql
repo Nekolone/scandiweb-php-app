@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS shopdb;
 CREATE DATABASE shopdb;
 USE shopdb;
 
-CREATE TABLE Product as P {
+CREATE TABLE Product{
   SKU varchar(8),
   itemName varchar(255),
   addTime timestamp,
@@ -10,19 +10,19 @@ CREATE TABLE Product as P {
   itemType int,
 };
 
-CREATE TABLE TypeSize as TS {
+CREATE TABLE TypeSize{
   SKU varchar(8),
   itemSize int,
  };
  
-CREATE TABLE TypeHWL as THWL{
+CREATE TABLE TypeHWL{
   SKU varchar(8),
   itemHeight int,
   itemWidth int,
   itemLength int 
 };
 
-CREATE TABLE TypeWeigth as TW{
+CREATE TABLE TypeWeigth{
   SKU varchar(8),
   itemWeight int
 };
