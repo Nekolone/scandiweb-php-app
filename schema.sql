@@ -7,7 +7,7 @@ CREATE TABLE product as P {
   name varchar(255),
   addTime timestamp,
   price decimal,
-  type int,
+  itemType int,
 };
 
 CREATE TABLE typeSize as TS {
