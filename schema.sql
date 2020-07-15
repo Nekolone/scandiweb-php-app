@@ -4,7 +4,7 @@ USE shopdb;
 
 CREATE TABLE product as P {
   SKU varchar(8),
-  name varchar(255),
+  itemName varchar(255),
   addTime timestamp,
   price decimal,
   itemType int,
