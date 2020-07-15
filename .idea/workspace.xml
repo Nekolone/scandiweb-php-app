@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/zagotovocki_html/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zagotovocki_html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/zagotovocki_html/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zagotovocki_html/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/zagotovocki_html/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -58,7 +59,10 @@
       <option name="presentableId" value="Default" />
       <updated>1594381420182</updated>
       <workItem from="1594381421481" duration="3118000" />
-      <workItem from="1594651607351" duration="5728000" />
+      <workItem from="1594651607351" duration="9956000" />
+      <workItem from="1594718343492" duration="611000" />
+      <workItem from="1594732600556" duration="11292000" />
+      <workItem from="1594816562693" duration="3314000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -123,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594657216871</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update 0.1.2">
+      <created>1594658139286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1594658139286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,14 +172,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
-    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1594658138593">
+    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1594826561371">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594658138593" />
-    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1594651715694">
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594826561371" />
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1594816704050">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594651715694" />
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594816704050" />
     <state x="672" y="256" key="MultipleFileMergeDialog" timestamp="1594658167771">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -185,6 +196,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594658143509" />
+    <state x="655" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1594816563560">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="655" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594816563560" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594384409063">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -193,9 +208,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="331" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594383620768" />
-    <state x="623" y="235" key="search.everywhere.popup" timestamp="1594651923441">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1594737344737">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594651923441" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594737344737" />
   </component>
 </project>
