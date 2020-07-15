@@ -4,25 +4,25 @@ USE shopdb;
 
 CREATE TABLE Product (
   SKU varchar(8),
-  name varchar(255),
-  addTime timestamp,
-  price decimal,
-  type int,
+  Name varchar(255),
+  AddTime timestamp,
+  Price decimal,
+  Type int,
 );
 
 CREATE TABLE TypeSize (
   SKU varchar(8),
-  size int,
+  Size int,
  );
  
 CREATE TABLE TypeHWL (
   SKU varchar(8),
-  height int,
-  width int,
-  length int 
+  Height int,
+  Width int,
+  Length int 
 );
 
 CREATE TABLE TypeWeigth (
   SKU varchar(8),
-  weight int
+  Weight int
 );
