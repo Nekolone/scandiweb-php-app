@@ -2,27 +2,27 @@ DROP DATABASE IF EXISTS shopdb;
 CREATE DATABASE shopdb;
 USE shopdb;
 
-CREATE TABLE Product as P (
+CREATE TABLE Product (
   SKU varchar(8),
-  itemName varchar(255),
+  name varchar(255),
   addTime timestamp,
   price decimal,
-  itemType int,
+  type int,
 );
 
-CREATE TABLE TypeSize as TS (
+CREATE TABLE TypeSize (
   SKU varchar(8),
-  itemSize int,
+  size int,
  );
  
-CREATE TABLE TypeHWL as THWL (
+CREATE TABLE TypeHWL (
   SKU varchar(8),
-  itemHeight int,
-  itemWidth int,
-  itemLength int 
+  height int,
+  width int,
+  length int 
 );
 
-CREATE TABLE TypeWeigth as TW (
+CREATE TABLE TypeWeigth (
   SKU varchar(8),
-  itemWeight int
+  weight int
 );
