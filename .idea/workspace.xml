@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/support_files/save_add_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/save_add_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,7 @@
       <workItem from="1594732600556" duration="11292000" />
       <workItem from="1594816562693" duration="7122000" />
       <workItem from="1594897095553" duration="18070000" />
-      <workItem from="1595077022700" duration="6804000" />
+      <workItem from="1595077022700" duration="10514000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -198,7 +194,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594928699643</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update 0.1.6&#10;add jquery">
+      <created>1595086140931</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1595086140931</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update 0.1.7&#10;type switcher">
+      <created>1595088387290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595088387290</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,9 +238,15 @@
     <MESSAGE value="update 0.1.3" />
     <MESSAGE value="update 0.1.4&#10;+form" />
     <MESSAGE value="update 0.1.5&#10;add 0.5 validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.5&#10;add 0.5 validation" />
+    <MESSAGE value="update 0.1.6&#10;add jquery" />
+    <MESSAGE value="update 0.1.7&#10;type switcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.7&#10;type switcher" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="198" key="#Inspections" timestamp="1595088404573">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#Inspections/0.0.1920.1080@0.0.1920.1080" timestamp="1595088404573" />
     <state x="667" y="130" key="#PHP" timestamp="1594652655418">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -243,10 +259,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
-    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1594928698547">
+    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595088386434">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594928698547" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595088386434" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1594833543673">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -275,10 +291,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1594928707763">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595088418811">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594928707763" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595088418811" />
     <state x="818" y="286" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1594834056915">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
