@@ -26,6 +26,7 @@ include_once "support_files/save_add_info.php";
                     <label>Price</label><br>
                     <input type="number" name="price" value="<?= $price ?>"><br>
                     <label>Type</label>
+
                     <select name="item__type" id="item__type" onchange="run()">
                         <?php
                         switch ($item__type) {
@@ -48,6 +49,8 @@ include_once "support_files/save_add_info.php";
                         }
                         ?>
                     </select><br><br>
+
+
                     <div class="size" id="size">
                         <label>Size</label><br>
                         <input type="number" name="size" value="<?= $size ?>"><br><br>
@@ -67,6 +70,33 @@ include_once "support_files/save_add_info.php";
                         <label>Weight</label><br>
                         <input type="number" name="weight" value="<?= $weight ?>"><br><br>
                     </div>
+                    <?php
+
+                    switch ($item__type) {
+                        case 0:
+                            echo "<script>
+                        $('.size').css(\"display\", \"block\");
+                        $('.HWL').css(\"display\", \"none\");
+                        $('.weight').css(\"display\", \"none\");
+                    </script>";
+                            break;
+                        case 1:
+                            echo "<script>
+                        $('.size').css(\"display\", \"none\");
+                        $('.HWL').css(\"display\", \"block\");
+                        $('.weight').css(\"display\", \"none\");
+                    </script>";
+                            break;
+                        case 2:
+                            echo "<script>
+                        $('.size').css(\"display\", \"none\");
+                        $('.HWL').css(\"display\", \"none\");
+                        $('.weight').css(\"display\", \"block\");
+                    </script>";
+                            break;
+                    }
+
+                    ?>
 
 
                     <?php
