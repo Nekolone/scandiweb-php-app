@@ -31,6 +31,8 @@ if (isset($_POST["done"])) {
 
     if (isset($_POST["weight"])) $weight = htmlspecialchars($_POST["weight"]);
 
+
+    //это все в класс проверки потом запихать, который будет возвращать значение в adderror в зависимости от ошибки
     switch ($item__type) {
         case "0":
             if ($image_link == "" or $SKU == "" or $name == "" or $price == "" or $item__type == "" or $size == "")
