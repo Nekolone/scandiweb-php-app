@@ -20,7 +20,7 @@ include_once "support_files/save_add_info.php";
                     <label> Image link</label><br>
                     <input type="text" name="image_link" value="<?= $image_link ?>"><br>
                     <label>SKU</label><br>
-                    <input type="text" name="SKU" value="<?= $SKU ?>"> <?= $SKU ?><br>
+                    <input type="text" name="SKU" value="<?= $SKU ?>">  <br>
                     <label>Name</label><br>
                     <input type="text" name="name" value="<?= $name ?>"><br>
                     <label>Price</label><br>
