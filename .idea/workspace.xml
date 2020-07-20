@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
+    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="update 0.1.7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +103,8 @@
       <workItem from="1594732600556" duration="11292000" />
       <workItem from="1594816562693" duration="7122000" />
       <workItem from="1594897095553" duration="18070000" />
-      <workItem from="1595077022700" duration="10514000" />
+      <workItem from="1595077022700" duration="10545000" />
+      <workItem from="1595247322771" duration="9422000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -208,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595088387290</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update 0.1.7&#10;type switcher">
+      <created>1595093774926</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1595093774926</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,10 +269,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
-    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595088386434">
+    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595247453093">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595088386434" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595247453093" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1594833543673">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -291,10 +301,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595088418811">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595093773763">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595088418811" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595093773763" />
     <state x="818" y="286" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1594834056915">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

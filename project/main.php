@@ -16,7 +16,32 @@ include_once "header.php"; ?>
                 $result_set = list_item();
                 printResult($result_set);
                 ?>
-                <div class="test__box">1</div>
+                <div class="info__box">
+                    <img src="https://sun1-21.userapi.com/zRvW6840WZKmcBKkUblIFCYM-SA698L2SSXh6w/N0DwuwKHmtM.jpg"
+                         alt="pic">
+                    <div>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td><span>Name:</span></td>
+                                <td><span>Name</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Price:</span></td>
+                                <td><span>250Eur</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Attribute:</span></td>
+                                <td><span>250x145x230</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>SKU:</span></td>
+                                <td><span>123456</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="test__box">1</div>
                 <div class="test__box">1</div>
                 <div class="test__box">1</div>
