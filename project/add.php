@@ -3,6 +3,7 @@ $title = "ADD PRODUCT";
 include_once "header.php";
 include_once "support_files/add_db.php";
 include_once "support_files/save_add_info.php";
+
 ?>
 
 
@@ -101,7 +102,7 @@ include_once "support_files/save_add_info.php";
 
                     <?php
                     if (isset($adderror))
-                        if ($adderror = 1)
+                        if ($adderror == 1)
                             echo "ERRoR";
                     ?>
 

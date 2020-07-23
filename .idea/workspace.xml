@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="update 0.1.7">
+    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/support_files/InformationProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/support_files/list_db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/support_files/set_db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/add_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/add_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/save_add_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/save_add_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +50,34 @@
         <item name="shopdb@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="shopdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shopdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shopdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="Product: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shopdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shopdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="TypeHWL: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shopdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shopdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="TypeSize: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shopdb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shopdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="TypeWeight: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -104,7 +139,10 @@
       <workItem from="1594816562693" duration="7122000" />
       <workItem from="1594897095553" duration="18070000" />
       <workItem from="1595077022700" duration="10545000" />
-      <workItem from="1595247322771" duration="9422000" />
+      <workItem from="1595247322771" duration="10951000" />
+      <workItem from="1595335260143" duration="10028000" />
+      <workItem from="1595430265738" duration="8005000" />
+      <workItem from="1595504504999" duration="10562000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -218,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595093774926</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update 0.1.7&#10;minor update">
+      <created>1595264807750</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1595264807750</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +295,8 @@
     <MESSAGE value="update 0.1.5&#10;add 0.5 validation" />
     <MESSAGE value="update 0.1.6&#10;add jquery" />
     <MESSAGE value="update 0.1.7&#10;type switcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.7&#10;type switcher" />
+    <MESSAGE value="update 0.1.7&#10;minor update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.7&#10;minor update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Inspections" timestamp="1595088404573">
@@ -261,18 +307,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="667" y="130" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1594652655418" />
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594913148020">
+    <state x="552" y="198" key="#SQL_Dialects" timestamp="1595335362594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594913148020" />
+    <state x="552" y="198" key="#SQL_Dialects/0.0.1920.1080@0.0.1920.1080" timestamp="1595335362594" />
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595515771907">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595515771907" />
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594383900504">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
-    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595247453093">
+    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595264804696">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595247453093" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595264804696" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1594833543673">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -289,26 +339,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="672" y="256" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594658167771" />
-    <state x="701" y="354" key="NewPhpClassDialog" timestamp="1594921511186">
+    <state x="701" y="354" key="NewPhpClassDialog" timestamp="1595337094380">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="701" y="354" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594921511186" />
-    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1594925675605">
+    <state x="701" y="354" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595337094380" />
+    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1595506682098">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594925675605" />
+    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595506682098" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1594383830399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595093773763">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595264817644">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595093773763" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595264817644" />
     <state x="818" y="286" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1594834056915">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="818" y="286" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594834056915" />
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595341726013">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595341726013" />
     <state x="655" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1594816563560">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -321,9 +375,13 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="331" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594383620768" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1594737344737">
+    <state x="616" y="250" key="run.anything.popup" timestamp="1595513802704">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594737344737" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595513802704" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1595435924118">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595435924118" />
   </component>
 </project>
