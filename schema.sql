@@ -7,7 +7,7 @@ CREATE TABLE Product (
   name varchar(255),
   addTime timestamp,
   price decimal,
-  imgLink varchar(255),
+  imgLink text,
   type int
 );
 
@@ -23,7 +23,8 @@ CREATE TABLE TypeHWL (
   length int 
 );
 
-CREATE TABLE TypeWeigth (
+CREATE TABLE TypeWeight (
   SKU varchar(8),
   weight int
 );
+
