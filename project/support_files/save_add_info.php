@@ -1,10 +1,10 @@
 <?php
 
 
-$image_link = "";
 $SKU = "";
 $name = "";
 $price = "";
+$image_link = "";
 $item__type = "0";
 
 $size = "";
@@ -32,23 +32,6 @@ if (isset($_POST["done"])) {
     if (isset($_POST["weight"])) $weight = htmlspecialchars($_POST["weight"]);
 
 
-    //это все в класс проверки потом запихать, который будет возвращать значение в adderror в зависимости от ошибки
-    switch ($item__type) {
-        case "0":
-            if ($image_link == "" or $SKU == "" or $name == "" or $price == "" or $item__type == "" or $size == "")
-                $adderror = 1;
-            else add_type_0($image_link, $SKU, $name, $price, $item__type, $size);
-            break;
-        case "1":
-            if ($image_link == "" or $SKU == "" or $name == "" or $price == "" or $item__type == "" or $height == "" or $width == "" or $length == "")
-                $adderror = 1;
-            else add_type_1($image_link, $SKU, $name, $price, $item__type, $height, $width, $length);
-            break;
-        case "2":
-            if ($image_link == "" or $SKU == "" or $name == "" or $price == "" or $item__type == "" or $weight == "")
-                $adderror = 1;
-            else add_type_2($image_link, $SKU, $name, $price, $item__type, $weight);
-            break;
-    }
+    $adderror=add_check($SKU, $name, $price, $image_link, $item__type, $size, $height, $width, $length, $weight);
 
 }
