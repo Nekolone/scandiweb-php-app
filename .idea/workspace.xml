@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/support_files/InformationProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/support_files/list_db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/support_files/set_db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/InformationProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/InformationProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/support_files/add_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/add_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/list_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/list_db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/support_files/save_add_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/save_add_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/set_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/set_db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +142,7 @@
       <workItem from="1595247322771" duration="10951000" />
       <workItem from="1595335260143" duration="10028000" />
       <workItem from="1595430265738" duration="8005000" />
-      <workItem from="1595504504999" duration="10562000" />
+      <workItem from="1595504504999" duration="21370000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -263,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595264807750</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update 0.1.8&#10;add&amp;list items">
+      <created>1595517248749</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1595517248749</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +303,8 @@
     <MESSAGE value="update 0.1.6&#10;add jquery" />
     <MESSAGE value="update 0.1.7&#10;type switcher" />
     <MESSAGE value="update 0.1.7&#10;minor update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.7&#10;minor update" />
+    <MESSAGE value="update 0.1.8&#10;add&amp;list items" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 0.1.8&#10;add&amp;list items" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="198" key="#Inspections" timestamp="1595088404573">
@@ -311,18 +319,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#SQL_Dialects/0.0.1920.1080@0.0.1920.1080" timestamp="1595335362594" />
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595515771907">
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595517278091">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595515771907" />
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595517278091" />
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594383900504">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594383900504" />
-    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595264804696">
+    <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1595517247375">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595264804696" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1595517247375" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1594833543673">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -343,18 +351,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="701" y="354" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595337094380" />
-    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1595506682098">
+    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1595525726948">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595506682098" />
+    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595525726948" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1594383830399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595264817644">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595517264600">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595264817644" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595517264600" />
     <state x="818" y="286" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1594834056915">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
