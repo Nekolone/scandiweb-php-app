@@ -4,7 +4,7 @@
 $SKU = "";
 $name = "";
 $price = "";
-$image_link = "";
+$image__link = "";
 $item__type = "0";
 
 $size = "";
@@ -17,7 +17,7 @@ $weight = "";
 
 
 if (isset($_POST["done"])) {
-    if (isset($_POST["image_link"])) $image_link = htmlspecialchars($_POST["image_link"]);
+    if (isset($_POST["image__link"])) $image__link = htmlspecialchars($_POST["image__link"]);
     if (isset($_POST["SKU"])) $SKU = htmlspecialchars($_POST["SKU"]);
     if (isset($_POST["name"])) $name = htmlspecialchars($_POST["name"]);
     if (isset($_POST["price"])) $price = htmlspecialchars($_POST["price"]);
@@ -32,6 +32,6 @@ if (isset($_POST["done"])) {
     if (isset($_POST["weight"])) $weight = htmlspecialchars($_POST["weight"]);
 
 
-    $adderror=add_check($SKU, $name, $price, $image_link, $item__type, $size, $height, $width, $length, $weight);
+    $adderror=add_check($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight);
 
 }

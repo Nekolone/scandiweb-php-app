@@ -7,8 +7,8 @@ CREATE TABLE Product (
   name varchar(255),
   addTime timestamp,
   price decimal,
-  imgLink text,
-  type int
+  image__link text,
+  item__type int
 );
 
 CREATE TABLE TypeSize (
