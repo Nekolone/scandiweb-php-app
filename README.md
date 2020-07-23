@@ -13,7 +13,7 @@ TSI 3rd year student
 `docker build -t application .`
 3. Run image, using port 8084:<br>
 Shell/Bash and PowerShell:
-`docker run -p 8084:80 -v ${PWD}:/app application `<br>
+`docker run -v ${PWD}:/app -p 8084:80 -p 8085:3306 application `<br>
 Windows CMD:
 `docker run -p 8084:80 -v%cd%:/app application`<br>
 4. Go to browser and look up `localhost:8084`
