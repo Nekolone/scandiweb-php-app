@@ -65,12 +65,10 @@ a {
 }
 
 
-
-
 /*
 all
  */
-header{
+header {
     width: 100%;
 
     position: absolute;
@@ -86,7 +84,7 @@ header .container .content__box, .main .container .content__box {
     justify-content: space-between;
 }
 
-header .container .content__box .button{
+header .container .content__box .button {
     width: 130px;
 }
 
@@ -95,11 +93,12 @@ header .container .content__box .button{
     PRODUCT LIST
  */
 
-.main .container{
+.main .container {
     padding-top: 50px;
     height: 100vh;
     overflow-y: scroll;
 }
+
 .main .container .content__box .item__box {
     display: flex;
     flex-wrap: wrap;
@@ -109,7 +108,7 @@ header .container .content__box .button{
     margin: 20px auto 0 auto;
 }
 
-.info__box{
+.info__box {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -122,28 +121,25 @@ header .container .content__box .button{
     background-color: #bbbbbb;
 }
 
-.info__box img{
+
+
+.info__box a img, .info__box a  {
     width: 150px;
     height: 200px;
 
     margin-right: 30px;
 }
 
-.info__box table td{
+.info__box table td {
     padding: 10px 10px 10px 0;
 }
-
-
-
-
-
 
 
 /*
 ADD PRODUCT
  */
 
-.main .container .content__box .form__box{
+.main .container .content__box .form__box {
     display: flex;
     align-items: center;
     margin: 0 auto;
