@@ -19,7 +19,7 @@ include_once "support_files/save_add_info.php";
 
                 <form action="#" method="post">
                     <label> Image link</label><br>
-                    <input type="text" name="image_link" value="<?= $image_link ?>"><br>
+                    <input type="text" name="image__link" value="<?= $image__link ?>"><br>
                     <label>SKU</label><br>
                     <input type="text" name="SKU" value="<?= $SKU ?>">  <br>
                     <label>Name</label><br>
@@ -97,10 +97,6 @@ include_once "support_files/save_add_info.php";
                             break;
                     }
 
-                    ?>
-
-
-                    <?php
                     if (isset($adderror))
                         if ($adderror == 1)
                             echo "ERRoR";
