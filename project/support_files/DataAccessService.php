@@ -20,7 +20,7 @@ class DataAccessService
         return self::$instance;
     }
 
-    public function __construct()
+    private function __construct()
     {
         $this->mysqli = new mysqli('localhost:3306', 'root', '', 'shopdb');
         $this->mysqli->query("SET NAMES 'utf8'");
