@@ -1,4 +1,5 @@
 <?php
+include_once "DataAccessService.php";
 
 abstract class Product
 {
@@ -7,6 +8,17 @@ abstract class Product
     public $price;
     public $image__link;
     public $item__type;
+
+    public function __construct($SKU)
+    {
+        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` WHERE Product.SKU='$SKU'");
+        $this->SKU = $row["SKU"];
+        $this->name = $row["name"];
+        $this->price = $row["price"];
+        $this->image__link = $row["image__link"];
+        $this->item__type = $row["item__type"];
+
+    }
 
     abstract public function outputInfo();
 
@@ -19,18 +31,8 @@ class SizeProduct extends Product
 
     function __construct($SKU)
     {
-
-        $mysqli = msl();
-        $mysqli->query("SET NAMES 'utf8'");
-        $getRow = $mysqli->query("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
-        $row = mysqli_fetch_assoc($getRow);
-        $mysqli->close();
-
-        $this->SKU = $row["SKU"];
-        $this->name = $row["name"];
-        $this->price = $row["price"];
-        $this->image__link = $row["image__link"];
-        $this->item__type = $row["item__type"];
+        parent::__construct($SKU);
+        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
         $this->size = $row["size"];
     }
 
@@ -55,17 +57,9 @@ class DimensionalProduct extends Product
 
     function __construct($SKU)
     {
-        $mysqli = msl();
-        $mysqli->query("SET NAMES 'utf8'");
-        $getRow = $mysqli->query("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
-        $row = mysqli_fetch_assoc($getRow);
-        $mysqli->close();
+        parent::__construct($SKU);
+        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
 
-        $this->SKU = $row["SKU"];
-        $this->name = $row["name"];
-        $this->price = $row["price"];
-        $this->image__link = $row["image__link"];
-        $this->item__type = $row["item__type"];
         $this->height = $row["height"];
         $this->width = $row["width"];
         $this->length = $row["length"];
@@ -89,17 +83,9 @@ class WeightProduct extends Product
 
     function __construct($SKU)
     {
-        $mysqli = msl();
-        $mysqli->query("SET NAMES 'utf8'");
-        $getRow = $mysqli->query("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
-        $row = mysqli_fetch_assoc($getRow);
-        $mysqli->close();
+        parent::__construct($SKU);
+        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
 
-        $this->SKU = $row["SKU"];
-        $this->name = $row["name"];
-        $this->price = $row["price"];
-        $this->image__link = $row["image__link"];
-        $this->item__type = $row["item__type"];
         $this->weight = $row["weight"];
 
     }
