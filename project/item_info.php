@@ -2,6 +2,7 @@
 isset($_GET["name"]) ? $title = $_GET["name"] : $title = "ERROR";
 include_once "header.php";
 include_once "support_files/list_db.php";
+if (isset($_POST["done"]))delete_item($_GET["SKU"]);
 ?>
 
 
@@ -17,6 +18,9 @@ include_once "support_files/list_db.php";
                 <?php
                 list_item($_GET["SKU"]);
                 ?>
+                <form action="#" method="post">
+                    <input type="submit" class="item__center" name="done" value="delete">
+                </form>
             </div>
         </div>
     </div>

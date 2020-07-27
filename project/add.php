@@ -1,7 +1,6 @@
 <?php
 $title = "ADD PRODUCT";
 include_once "header.php";
-//include_once "support_files/add_db.php";
 include_once "support_files/save_add_info.php";
 
 ?>
@@ -20,7 +19,7 @@ include_once "support_files/save_add_info.php";
                 <form action="#" method="post">
                     <label> Image link</label><br>
                     <input type="text" name="image__link" value="<?= $image__link ?>"><br>
-                    <label>SKU</label><br>
+                    <label>SKU (auto generate if empty)</label><br>
                     <input type="text" name="SKU" value="<?= $SKU ?>">  <br>
                     <label>Name</label><br>
                     <input type="text" name="name" value="<?= $name ?>"><br>
@@ -53,22 +52,22 @@ include_once "support_files/save_add_info.php";
 
 
                     <div class="size" id="size">
-                        <label>Size</label><br>
-                        <input type="text" name="size" value="<?= $size ?>"><br><br>
+                        <label>Size </label><br>
+                        <input type="text" name="size " value="<?= $size ?>"><br><br>
                     </div>
 
 
                     <div class="HWL" id="hwl">
-                        <label>Height</label><br>
+                        <label>Height mm</label><br>
                         <input type="number" name="height" value="<?= $height ?>"><br>
-                        <label>Width</label><br>
+                        <label>Width mm</label><br>
                         <input type="number" name="width" value="<?= $width ?>"><br>
-                        <label>Length</label><br>
+                        <label>Length mm</label><br>
                         <input type="number" name="length" value="<?= $length ?>"><br><br>
                     </div>
 
                     <div class="weight" id="weight">
-                        <label>Weight</label><br>
+                        <label>Weight kg</label><br>
                         <input type="number" name="weight" value="<?= $weight ?>"><br><br>
                     </div>
                     <?php

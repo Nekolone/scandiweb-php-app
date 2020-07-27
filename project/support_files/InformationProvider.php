@@ -18,12 +18,7 @@ abstract class Product
         $product->item__type = $item__type;
     }
 
-    /**
-     * Метод проверяет если все поля валидны.
-     * Возврашает true если всё валидно.
-     * False если не всё валидно
-     * @return bool|void
-     */
+
     public function isValid()
     {
         $var1 = isset($this->SKU) ? strlen($this->SKU) == 8 : false;
@@ -32,15 +27,18 @@ abstract class Product
         $var4 = isset($this->image__link) ? filter_var($this->image__link, FILTER_VALIDATE_URL) : false;
         $arr = array("0", "1", "2");
         $var5 = isset($this->item__type) ? in_array($this->item__type, $arr) : false;
-
-
-        if (($var1 == true) and ($var2 == true) and ($var3 == true) and ($var4 == true) and ($var5 == true))
+        //добавить проверку SKU
+        $var6 = SomethingWithSKU::checkSKU($this->SKU);
+        if (($var1 == true) and ($var2 == true) and ($var3 == true) and ($var4 == true) and ($var5 == true) and ($var6 == true))
             return true;
         else
             return false;
     }
 
+
     abstract public function outputInfo();
+
+    abstract public function outputItem();
 
     abstract public function persistToDB();
 
@@ -71,12 +69,17 @@ class SizeProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>size=" . $this->size . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function outputItem()
+    {
+
     }
 
     public function isValid()
@@ -128,12 +131,17 @@ class DimensionalProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x" . $this->length . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function outputItem()
+    {
+
     }
 
     public function isValid()
@@ -182,12 +190,17 @@ class WeightProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function outputItem()
+    {
+
     }
 
     public function isValid()
@@ -207,5 +220,48 @@ class WeightProduct extends Product
     {
         DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
         DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` (`SKU`, `weight`) VALUES ('$this->SKU','$this->weight')");
+    }
+}
+
+
+class SomethingWithSKU
+{
+   //public $SKU;
+   //public function __construct()
+   //{
+   //}
+
+    private static $instance = null;
+
+
+    public static function getSKUAcc()
+    {
+        if (self::$instance == null) {
+            self::$instance = new SomethingWithSKU();
+        }
+        return self::$instance;
+    }
+
+    public function genSKU()
+    {
+        do {
+            $SKU = $this->randomSKU();
+        } while ($this->checkSKU($SKU) == false);
+        return  strtoupper (mb_substr($SKU, 0, 8));
+    }
+
+    public function randomSKU()
+    {
+        return hash('md5',rand());
+    }
+
+    public static function checkSKU($SKU)
+    {
+        $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT * FROM `Product` WHERE SKU='$SKU'");
+        $row = mysqli_fetch_assoc($getResult);
+        if ($row["SKU"] == false)
+            return true;
+        else
+            return false;
     }
 }
