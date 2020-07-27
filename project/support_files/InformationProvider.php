@@ -9,15 +9,13 @@ abstract class Product
     public $image__link;
     public $item__type;
 
-    public function __construct($SKU)
+    public static function initializeProduct($product, $SKU, $name, $price, $image__link, $item__type)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` WHERE Product.SKU='$SKU'");
-        $this->SKU = $row["SKU"];
-        $this->name = $row["name"];
-        $this->price = $row["price"];
-        $this->image__link = $row["image__link"];
-        $this->item__type = $row["item__type"];
-
+        $product->SKU = $SKU;
+        $product->name = $name;
+        $product->price = $price;
+        $product->image__link = $image__link;
+        $product->item__type = $item__type;
     }
 
     abstract public function outputInfo();
@@ -29,11 +27,21 @@ class SizeProduct extends Product
 {
     public $size;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $size)
     {
-        parent::__construct($SKU);
+        $product = new SizeProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->size = $size;
+        return $product;
+    }
+
+    public static function fromDB($SKU)
+    {
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
-        $this->size = $row["size"];
+        $product = new SizeProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        $product->size = $row["size"];
+        return $product;
     }
 
     public function outputInfo()
@@ -55,14 +63,25 @@ class DimensionalProduct extends Product
     public $width;
     public $length;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $height, $width, $length)
     {
-        parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $product = new DimensionalProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->height = $height;
+        $product->width = $width;
+        $product->legth = $length;
+        return $product;
+    }
 
-        $this->height = $row["height"];
-        $this->width = $row["width"];
-        $this->length = $row["length"];
+    public static function fromDB($SKU)
+    {
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $product = new DimensionalProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        $product->height = $row["height"];
+        $product->width = $row["width"];
+        $product->legth = $row["length"];
+        return $product;
     }
 
     public function outputInfo()
@@ -81,13 +100,21 @@ class WeightProduct extends Product
 {
     public $weight;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $weight)
     {
-        parent::__construct($SKU);
+        $product = new WeightProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->weight = $weight;
+        return $product;
+    }
+
+    public static function fromDB($SKU)
+    {
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
-
-        $this->weight = $row["weight"];
-
+        $product = new WeightProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"],);
+        $product->weight = $row["weight"];
+        return $product;
     }
 
     public function outputInfo()
