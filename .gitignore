@@ -1,3 +1,4 @@
 .idea/workspace.xml
 .idea/sonarlint/**
 .idea/checkstyle-idea.xml
+.idea/php.xml
