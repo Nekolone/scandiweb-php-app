@@ -1,37 +1,27 @@
 <?php
 include_once "InformationProvider.php";
 
-function getSkuProducts()
-{
-    $mysqli = msl();
-    $mysqli->query("SET NAMES 'utf8'");
-    $getSKU = $mysqli->query("SELECT SKU, item__type FROM `Product`");
-    $mysqli->close();
-    return $getSKU;
-}
-
-
 
 function list_result()
 {
-
-    $getResult = getSkuProducts();
+    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`");
     while (($row = mysqli_fetch_assoc($getResult))) {
         get_product($row)->outputInfo();
     }
 }
 
-function get_product($row) {
+function get_product($row)
+{
+    $SKU = $row["SKU"];
     switch ($row["item__type"]) {
         case 0:
-            return new SizeProduct($row["SKU"]);
+            return new SizeProduct($SKU);
         case 1:
-            return new DimensionalProduct($row["SKU"]);
+            return new DimensionalProduct($SKU);
         case 2:
-            return new WeightProduct($row["SKU"]);
+            return new WeightProduct($SKU);
     }
 }
-
 
 
 //function printResult($result_set)
