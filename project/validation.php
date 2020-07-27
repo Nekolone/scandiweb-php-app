@@ -1,14 +1,11 @@
 <?php
 include_once "support_files/set_db.php";
+include_once "support_files/DataAccessService.php";
 
 
 function add_check($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight)
 {
-    $mysqli = msl();
-    $mysqli->query("SET NAMES 'utf8'");
-    $skucheck = $mysqli->query("SELECT * FROM `Product` WHERE SKU='$SKU'");
-    $row = mysqli_fetch_assoc($skucheck);
-    $mysqli->close();
+    $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` WHERE SKU='$SKU'");
     if ($row["SKU"] == false)
         if ($SKU != "" or strlen($SKU) < 8 or $name != "" or $price != "" or $image__link != "" or $item__type != "")
             switch ($item__type) {
