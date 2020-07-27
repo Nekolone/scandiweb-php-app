@@ -108,7 +108,7 @@ class DimensionalProduct extends Product
         Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
         $product->height = $row["height"];
         $product->width = $row["width"];
-        $product->legth = $row["length"];
+        $product->length = $row["length"];
         return $product;
     }
 
