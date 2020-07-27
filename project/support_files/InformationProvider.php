@@ -11,7 +11,7 @@ abstract class Product
 
     public function __construct($SKU)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` WHERE Product.SKU='$SKU'");
         $this->SKU = $row["SKU"];
         $this->name = $row["name"];
         $this->price = $row["price"];
@@ -32,7 +32,7 @@ class SizeProduct extends Product
     function __construct($SKU)
     {
         parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
         $this->size = $row["size"];
     }
 
@@ -58,7 +58,7 @@ class DimensionalProduct extends Product
     function __construct($SKU)
     {
         parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
 
         $this->height = $row["height"];
         $this->width = $row["width"];
@@ -84,7 +84,7 @@ class WeightProduct extends Product
     function __construct($SKU)
     {
         parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
 
         $this->weight = $row["weight"];
 
