@@ -1,7 +1,7 @@
 <?php
 
 
-$SKU = "";
+$SKU= SomethingWithSKU::getSKUAcc()->genSKU();;
 $name = "";
 $price = "";
 $image__link = "";
@@ -18,7 +18,11 @@ $weight = "";
 
 if (isset($_POST["done"])) {
     if (isset($_POST["image__link"])) $image__link = htmlspecialchars($_POST["image__link"]);
-    if (isset($_POST["SKU"])) $SKU = htmlspecialchars($_POST["SKU"]);
+    if (isset($_POST["SKU"]))
+        if($_POST["SKU"]!="")
+            $SKU = htmlspecialchars($_POST["SKU"]);
+        else
+            $SKU= SomethingWithSKU::getSKUAcc()->genSKU();
     if (isset($_POST["name"])) $name = htmlspecialchars($_POST["name"]);
     if (isset($_POST["price"])) $price = htmlspecialchars($_POST["price"]);
     if (isset($_POST["item__type"])) $item__type = htmlspecialchars($_POST["item__type"]);
