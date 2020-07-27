@@ -20,6 +20,11 @@ class DataAccessService
         return $this->mysqli->query($query);
     }
 
+    public function executeQuery($query)
+    {
+        $this->mysqli->query($query);
+    }
+
 
     public static function getDataAccessor()
     {
