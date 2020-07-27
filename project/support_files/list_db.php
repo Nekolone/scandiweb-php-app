@@ -15,11 +15,11 @@ function get_product($row)
     $SKU = $row["SKU"];
     switch ($row["item__type"]) {
         case 0:
-            return new SizeProduct($SKU);
+            return SizeProduct::fromDB($SKU);
         case 1:
-            return new DimensionalProduct($SKU);
+            return DimensionalProduct::fromDB($SKU);
         case 2:
-            return new WeightProduct($SKU);
+            return WeightProduct::fromDB($SKU);
         default:
             throw new InvalidArgumentException("Item type is unknown:" . $row["item__type"]);
     }
