@@ -18,7 +18,21 @@ abstract class Product
         $product->item__type = $item__type;
     }
 
+    /**
+     * Метод проверяет если все поля валидны.
+     * Возврашает true если всё валидно.
+     * False если не всё валидно
+     * @return bool|void
+     */
+    public function isValid()
+    {
+        //выполняем проверки на поля sku,name,price,link,item_type
+        return true;
+    }
+
     abstract public function outputInfo();
+
+    abstract public function persistToDB();
 
 }
 
@@ -55,6 +69,20 @@ class SizeProduct extends Product
         echo "</tr></tbody></table></div></div>";
     }
 
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на size если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeSize` (`SKU`, `size`) VALUES ('$this->SKU','$this->size')");
+    }
 }
 
 class DimensionalProduct extends Product
@@ -69,7 +97,7 @@ class DimensionalProduct extends Product
         Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
         $product->height = $height;
         $product->width = $width;
-        $product->legth = $length;
+        $product->length = $length;
         return $product;
     }
 
@@ -93,6 +121,21 @@ class DimensionalProduct extends Product
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x" . $this->length . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на height, width, length если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeHWL` (`SKU`, `height`, `width`, `length`) VALUES ('$this->SKU','$this->height','$this->width','$this->length')");
     }
 }
 
@@ -126,5 +169,20 @@ class WeightProduct extends Product
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на weight если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` (`SKU`, `weight`) VALUES ('$this->SKU','$this->weight')");
     }
 }
