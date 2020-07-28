@@ -2,6 +2,19 @@
 include_once "InformationProvider.php";
 
 
+function list_search_result($search){
+    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE name like '%$search%'");
+    while ($row = mysqli_fetch_assoc($getResult)) {
+        get_product($row)->outputInfo();
+    }
+}
+
+function list_item($SKU){
+    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE SKU='$SKU'");
+    $row = mysqli_fetch_assoc($getResult);
+    get_product($row)->outputInfo();
+}
+
 function list_result()
 {
     $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`");
@@ -25,5 +38,4 @@ function get_product($row)
     }
 }
 
-?>
 

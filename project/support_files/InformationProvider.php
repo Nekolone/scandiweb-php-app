@@ -26,8 +26,18 @@ abstract class Product
      */
     public function isValid()
     {
-        //выполняем проверки на поля sku,name,price,link,item_type
-        return true;
+        $var1 = isset($this->SKU) ? strlen($this->SKU) == 8 : false;
+        $var2 = isset($this->name) ? $this->name != "" : false;
+        $var3 = isset($this->price) ? $this->price != "" : false;
+        $var4 = isset($this->image__link) ? filter_var($this->image__link, FILTER_VALIDATE_URL) : false;
+        $arr = array("0", "1", "2");
+        $var5 = isset($this->item__type) ? in_array($this->item__type, $arr) : false;
+
+
+        if (($var1 == true) and ($var2 == true) and ($var3 == true) and ($var4 == true) and ($var5 == true))
+            return true;
+        else
+            return false;
     }
 
     abstract public function outputInfo();
@@ -61,7 +71,7 @@ class SizeProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"#\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>size=" . $this->size . "</span></td>";
@@ -74,13 +84,16 @@ class SizeProduct extends Product
         if (!parent::isValid()) {
             return false;
         }
-        //выполнем проверку на size если надо
-        return true;
+        $var1 = isset($this->size) ? $this->size != "" : false;
+        if ($var1 == true)
+            return true;
+        else
+            return false;
     }
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
         DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeSize` (`SKU`, `size`) VALUES ('$this->SKU','$this->size')");
     }
 }
@@ -115,7 +128,7 @@ class DimensionalProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"#\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x" . $this->length . "</span></td>";
@@ -128,13 +141,19 @@ class DimensionalProduct extends Product
         if (!parent::isValid()) {
             return false;
         }
-        //выполнем проверку на height, width, length если надо
-        return true;
+        $var1 = isset($this->height) ? filter_var($this->height, FILTER_VALIDATE_INT) : false;
+        $var2 = isset($this->width) ? filter_var($this->width, FILTER_VALIDATE_INT) : false;
+        $var3 = isset($this->length) ? filter_var($this->length, FILTER_VALIDATE_INT) : false;
+
+        if (($var1 == true) and ($var2 == true) and ($var3 == true))
+            return true;
+        else
+            return false;
     }
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
         DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeHWL` (`SKU`, `height`, `width`, `length`) VALUES ('$this->SKU','$this->height','$this->width','$this->length')");
     }
 }
@@ -155,7 +174,7 @@ class WeightProduct extends Product
     {
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
         $product = new WeightProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"],);
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
         $product->weight = $row["weight"];
         return $product;
     }
@@ -163,7 +182,7 @@ class WeightProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"#\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=".$this->SKU."&name=".$this->name."\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
@@ -176,13 +195,17 @@ class WeightProduct extends Product
         if (!parent::isValid()) {
             return false;
         }
-        //выполнем проверку на weight если надо
-        return true;
+        $var1 = isset($this->weight) ? filter_var($this->weight, FILTER_VALIDATE_INT) : false;
+
+        if ($var1 == true)
+            return true;
+        else
+            return false;
     }
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
         DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` (`SKU`, `weight`) VALUES ('$this->SKU','$this->weight')");
     }
 }

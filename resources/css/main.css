@@ -78,7 +78,7 @@ header .container {
     background-color: #bbbbbb;
 }
 
-header .container .content__box, .main .container .content__box {
+header .container .content__box, .main .container .content__box, header .container .content__box form {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -88,6 +88,10 @@ header .container .content__box .button {
     width: 130px;
 }
 
+
+header .container .content__box form .button{
+    width: auto;
+}
 
 /*
     PRODUCT LIST
@@ -144,6 +148,15 @@ ADD PRODUCT
     align-items: center;
     margin: 0 auto;
 }
+
+
+/*
+ITEM INFO
+ */
+.item-info__box{
+
+}
+
 
 /*
 TEST
