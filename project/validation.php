@@ -1,5 +1,5 @@
 <?php
-include_once "support_files/set_db.php";
+//include_once "support_files/set_db.php";
 include_once "support_files/DataAccessService.php";
 include_once "support_files/InformationProvider.php";
 
