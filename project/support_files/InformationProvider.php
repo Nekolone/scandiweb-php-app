@@ -9,18 +9,30 @@ abstract class Product
     public $image__link;
     public $item__type;
 
-    public function __construct($SKU)
+    public static function initializeProduct($product, $SKU, $name, $price, $image__link, $item__type)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` WHERE Product.SKU='$SKU'");
-        $this->SKU = $row["SKU"];
-        $this->name = $row["name"];
-        $this->price = $row["price"];
-        $this->image__link = $row["image__link"];
-        $this->item__type = $row["item__type"];
+        $product->SKU = $SKU;
+        $product->name = $name;
+        $product->price = $price;
+        $product->image__link = $image__link;
+        $product->item__type = $item__type;
+    }
 
+    /**
+     * Метод проверяет если все поля валидны.
+     * Возврашает true если всё валидно.
+     * False если не всё валидно
+     * @return bool|void
+     */
+    public function isValid()
+    {
+        //выполняем проверки на поля sku,name,price,link,item_type
+        return true;
     }
 
     abstract public function outputInfo();
+
+    abstract public function persistToDB();
 
 }
 
@@ -29,11 +41,21 @@ class SizeProduct extends Product
 {
     public $size;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $size)
     {
-        parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
-        $this->size = $row["size"];
+        $product = new SizeProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->size = $size;
+        return $product;
+    }
+
+    public static function fromDB($SKU)
+    {
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
+        $product = new SizeProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        $product->size = $row["size"];
+        return $product;
     }
 
     public function outputInfo()
@@ -47,6 +69,20 @@ class SizeProduct extends Product
         echo "</tr></tbody></table></div></div>";
     }
 
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на size если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeSize` (`SKU`, `size`) VALUES ('$this->SKU','$this->size')");
+    }
 }
 
 class DimensionalProduct extends Product
@@ -55,14 +91,25 @@ class DimensionalProduct extends Product
     public $width;
     public $length;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $height, $width, $length)
     {
-        parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $product = new DimensionalProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->height = $height;
+        $product->width = $width;
+        $product->length = $length;
+        return $product;
+    }
 
-        $this->height = $row["height"];
-        $this->width = $row["width"];
-        $this->length = $row["length"];
+    public static function fromDB($SKU)
+    {
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $product = new DimensionalProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        $product->height = $row["height"];
+        $product->width = $row["width"];
+        $product->length = $row["length"];
+        return $product;
     }
 
     public function outputInfo()
@@ -75,19 +122,42 @@ class DimensionalProduct extends Product
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
     }
+
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на height, width, length если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeHWL` (`SKU`, `height`, `width`, `length`) VALUES ('$this->SKU','$this->height','$this->width','$this->length')");
+    }
 }
 
 class WeightProduct extends Product
 {
     public $weight;
 
-    function __construct($SKU)
+    public static function buildProduct($SKU, $name, $price, $image__link, $item__type, $weight)
     {
-        parent::__construct($SKU);
-        $row = DataAccessService::getDataAccessor()->getSingleRow("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
+        $product = new WeightProduct();
+        Product::initializeProduct($product, $SKU, $name, $price, $image__link, $item__type);
+        $product->weight = $weight;
+        return $product;
+    }
 
-        $this->weight = $row["weight"];
-
+    public static function fromDB($SKU)
+    {
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
+        $product = new WeightProduct();
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"],);
+        $product->weight = $row["weight"];
+        return $product;
     }
 
     public function outputInfo()
@@ -99,5 +169,20 @@ class WeightProduct extends Product
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
+    }
+
+    public function isValid()
+    {
+        if (!parent::isValid()) {
+            return false;
+        }
+        //выполнем проверку на weight если надо
+        return true;
+    }
+
+    public function persistToDB()
+    {
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `addTime`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', NULL, '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` (`SKU`, `weight`) VALUES ('$this->SKU','$this->weight')");
     }
 }
