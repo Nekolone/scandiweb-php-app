@@ -18,4 +18,4 @@ require'validation.php';
 <header class="header">
     <div class="container">
         <div class="content__box">
-            <div class="logo"><?=$title?></div>
+            <a href="main.php" class="logo"><?=$title?></a>

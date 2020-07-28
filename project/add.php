@@ -1,7 +1,7 @@
 <?php
 $title = "ADD PRODUCT";
 include_once "header.php";
-include_once "support_files/add_db.php";
+//include_once "support_files/add_db.php";
 include_once "support_files/save_add_info.php";
 
 ?>
@@ -54,7 +54,7 @@ include_once "support_files/save_add_info.php";
 
                     <div class="size" id="size">
                         <label>Size</label><br>
-                        <input type="number" name="size" value="<?= $size ?>"><br><br>
+                        <input type="text" name="size" value="<?= $size ?>"><br><br>
                     </div>
 
 

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="">
+    <list default="true" id="1b9fc272-d1a8-42dd-b349-decb942f4211" name="Default Changelist" comment="update 0.1.9&#10;IT WORKS!!!!!!!!!!!!(admin-&gt;root)">
+      <change afterPath="$PROJECT_DIR$/project/item_info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/search_list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/DataAccessService.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/DataAccessService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/InformationProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/InformationProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/support_files/list_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/support_files/list_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +81,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="bug-free-octo-spoon" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -93,6 +105,19 @@
       </set>
     </option>
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="225bd3b3-8990-4411-bb97-553c2662c0bd" name="localhost" port="8085" use_path_mappings="true" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4.8 2" />
   <component name="ProjectId" id="1eUg7sjzlfQBNKhJI9FUVDFLdTf" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -108,9 +133,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/wamp64/www/KursWork" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -133,6 +158,10 @@
       <workItem from="1595335260143" duration="10028000" />
       <workItem from="1595430265738" duration="8005000" />
       <workItem from="1595504504999" duration="23402000" />
+      <workItem from="1595939410026" duration="6080000" />
+      <workItem from="1595947133037" duration="623000" />
+      <workItem from="1595947772331" duration="1732000" />
+      <workItem from="1595949524155" duration="8538000" />
     </task>
     <task id="LOCAL-00001" summary="test commit1">
       <created>1594383972414</created>
@@ -313,22 +342,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="update 0.1.9&#10;IT WORKS!!!!!!!!!!!!(admin-&gt;root)" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="610" y="241" key="#CLI_Interpreters" timestamp="1595949941422">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="610" y="241" key="#CLI_Interpreters/0.0.1920.1080@0.0.1920.1080" timestamp="1595949941422" />
+    <state x="1246" y="379" width="574" height="533" key="#Docker" timestamp="1595946334406">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1246" y="379" width="574" height="533" key="#Docker/0.0.1920.1080@0.0.1920.1080" timestamp="1595946334406" />
+    <state x="679" y="93" key="#Dockerfile" timestamp="1595947833179">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="679" y="93" key="#Dockerfile/0.0.1920.1080@0.0.1920.1080" timestamp="1595947833179" />
     <state x="552" y="198" key="#Inspections" timestamp="1595088404573">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#Inspections/0.0.1920.1080@0.0.1920.1080" timestamp="1595088404573" />
-    <state x="667" y="130" key="#PHP" timestamp="1594652655418">
+    <state x="667" y="130" key="#PHP" timestamp="1595946338578">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="667" y="130" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1594652655418" />
+    <state x="667" y="130" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1595946338578" />
     <state x="552" y="198" key="#SQL_Dialects" timestamp="1595335362594">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#SQL_Dialects/0.0.1920.1080@0.0.1920.1080" timestamp="1595335362594" />
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595517278091">
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595950774659">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595517278091" />
+    <state x="552" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595950774659" />
     <state x="735" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594383900504">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -341,10 +382,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1920.1080@0.0.1920.1080" timestamp="1594833543673" />
-    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1594833419631">
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1595954785367">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594833419631" />
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1595954785367" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1594834061715">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -357,14 +398,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="701" y="354" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595337094380" />
-    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1595525726948">
+    <state x="795" y="463" key="NewPhpFileDialog" timestamp="1595957681993">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595525726948" />
-    <state x="461" y="182" key="SettingsEditor" timestamp="1594383830399">
+    <state x="795" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595957681993" />
+    <state x="463" y="182" width="996" height="715" key="SettingsEditor" timestamp="1595950901233">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1594383830399" />
+    <state x="463" y="182" width="996" height="715" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1595950901233" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1595535075372">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -377,25 +418,37 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595341726013" />
-    <state x="655" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1594816563560">
+    <state x="655" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1595949538666">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="655" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594816563560" />
+    <state x="655" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595949538666" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595614829267">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1595614829267" />
+    <state x="522" y="276" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1595951319177">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="522" y="276" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1595951319177" />
+    <state x="351" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1595948063337">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="351" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595948063337" />
     <state x="655" y="331" key="git4idea.merge.GitPullDialog" timestamp="1594383620768">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="331" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594383620768" />
+    <state x="701" y="182" key="refactoring.ChangeSignatureDialog" timestamp="1595943125725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="701" y="182" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595943125725" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1595513802704">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595513802704" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1595435924118">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1595939624318">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595435924118" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595939624318" />
   </component>
 </project>
