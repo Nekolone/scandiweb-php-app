@@ -4,7 +4,8 @@ include_once "InformationProvider.php";
 
 function listSearchResult($search)
 {
-    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE name like '%$search%'");
+    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`
+                                                                                WHERE name like '%$search%'");
     while ($row = mysqli_fetch_assoc($getResult)) {
         getProduct($row)->outputInfo();
     }
@@ -12,7 +13,8 @@ function listSearchResult($search)
 
 function listItem($SKU)
 {
-    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE SKU='$SKU'");
+    $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`
+                                                                                WHERE SKU='$SKU'");
     $row = mysqli_fetch_assoc($getResult);
     getProduct($row)->outputInfo();
 }

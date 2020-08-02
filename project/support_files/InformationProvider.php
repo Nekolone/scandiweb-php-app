@@ -63,8 +63,14 @@ class SizeProduct extends Product
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN
     TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
         $product = new SizeProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"],
-            $row["item__type"]);
+        Product::initializeProduct(
+            $product,
+            $row["SKU"],
+            $row["name"],
+            $row["price"],
+            $row["image__link"],
+            $row["item__type"]
+        );
         $product->size = $row["size"];
         return $product;
     }
@@ -130,8 +136,14 @@ class DimensionalProduct extends Product
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product`
     JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
         $product = new DimensionalProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"],
-            $row["item__type"]);
+        Product::initializeProduct(
+            $product,
+            $row["SKU"],
+            $row["name"],
+            $row["price"],
+            $row["image__link"],
+            $row["item__type"]
+        );
         $product->height = $row["height"];
         $product->width = $row["width"];
         $product->length = $row["length"];
@@ -195,11 +207,17 @@ class WeightProduct extends Product
 
     public static function fromDB($SKU)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` 
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product`
                                             JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
         $product = new WeightProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"],
-            $row["image__link"], $row["item__type"]);
+        Product::initializeProduct(
+            $product,
+            $row["SKU"],
+            $row["name"],
+            $row["price"],
+            $row["image__link"],
+            $row["item__type"]
+        );
         $product->weight = $row["weight"];
         return $product;
     }
@@ -236,11 +254,11 @@ class WeightProduct extends Product
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` 
-                        (`SKU`, `name`, `price`, `image__link`, `item__type`) 
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product`
+                        (`SKU`, `name`, `price`, `image__link`, `item__type`)
                         VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` 
-                        (`SKU`, `weight`) 
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight`
+                        (`SKU`, `weight`)
                         VALUES ('$this->SKU','$this->weight')");
     }
 }
