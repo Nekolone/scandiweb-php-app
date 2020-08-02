@@ -21,7 +21,7 @@ isset($_POST["done"])?header("Location:search_list.php?search=".$_POST["search"]
         <div class="content__box">
             <div class="item__box">
                 <?php
-                list_search_result($_GET["search"]);
+                listSearchResult($_GET["search"]);
                 ?>
             </div>
         </div>

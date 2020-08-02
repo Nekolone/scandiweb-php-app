@@ -2,38 +2,40 @@
 include_once "InformationProvider.php";
 
 
-function list_search_result($search)
+function listSearchResult($search)
 {
     $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE name like '%$search%'");
     while ($row = mysqli_fetch_assoc($getResult)) {
-        get_product($row)->outputInfo();
+        getProduct($row)->outputInfo();
     }
 }
 
-function list_item($SKU)
+function listItem($SKU)
 {
     $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product` WHERE SKU='$SKU'");
     $row = mysqli_fetch_assoc($getResult);
-    get_product($row)->outputInfo();
+    getProduct($row)->outputInfo();
 }
 
-function list_result()
+function listResult()
 {
     $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`");
     while ($row = mysqli_fetch_assoc($getResult)) {
-        get_product($row)->outputInfo();
+        getProduct($row)->outputInfo();
     }
 }
 
-function delete_item($SKU){
+function deleteItem($SKU)
+{
+    DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeSize` WHERE SKU='$SKU'");
+    DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeHWL` WHERE SKU='$SKU'");
+    DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeWeight` WHERE SKU='$SKU'");
     DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `Product` WHERE SKU='$SKU'");
-
     header("Location:main.php");
 }
 
 
-
-function get_product($row)
+function getProduct($row)
 {
     $SKU = $row["SKU"];
     switch ($row["item__type"]) {

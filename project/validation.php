@@ -4,7 +4,7 @@ include_once "support_files/DataAccessService.php";
 include_once "support_files/InformationProvider.php";
 
 
-function add_check($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight)
+function addСheck($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight)
 {
     $product = createProduct($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight);
     if ($product->isValid()) {
@@ -20,7 +20,8 @@ function createProduct($SKU, $name, $price, $image__link, $item__type, $size, $h
         case 0:
             return SizeProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $size);
         case 1:
-            return DimensionalProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $height, $width, $length);
+            return DimensionalProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $height, $width,
+                $length);
         case 2:
             return WeightProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $weight);
         default:
