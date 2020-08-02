@@ -43,7 +43,7 @@ class DataAccessService
         $this->mysqli->query("SET NAMES 'utf8'");
     }
 
-    function __destruct()
+    public function __destruct()
     {
         $this->mysqli->close();
     }
