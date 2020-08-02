@@ -20,7 +20,7 @@ include_once "support_files/save_add_info.php";
                     <label> Image link</label><br>
                     <input type="text" name="image__link" value="<?= $image__link ?>"><br>
                     <label>SKU (auto generate if empty)</label><br>
-                    <input type="text" name="SKU" value="<?= $SKU ?>">  <br>
+                    <input type="text" name="SKU" value="<?= $SKU ?>"> <br>
                     <label>Name</label><br>
                     <input type="text" name="name" value="<?= $name ?>"><br>
                     <label>Price</label><br>
@@ -45,6 +45,8 @@ include_once "support_files/save_add_info.php";
                         <option value=\"1\" >HxWxL</option>
                         <option value=\"2\" selected >Weight</option>";
                                 break;
+                            default:
+                                throw new InvalidArgumentException("Item type is unknown:$item__type");
 
                         }
                         ?>
@@ -96,9 +98,11 @@ include_once "support_files/save_add_info.php";
                             break;
                     }
 
-                    if (isset($adderror))
-                        if ($adderror == 1)
+                    if (isset($adderror)) {
+                        if ($adderror == 1) {
                             echo "ERRoR";
+                        }
+                    }
                     ?>
 
 
