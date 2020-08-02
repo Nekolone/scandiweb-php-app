@@ -2,7 +2,8 @@
 isset($_GET["name"]) ? $title = $_GET["name"] : $title = "ERROR";
 include_once "header.php";
 include_once "support_files/list_db.php";
-if (isset($_POST["done"]))delete_item($_GET["SKU"]);
+if (isset($_POST["done"]))
+    deleteItem($_GET["SKU"]);
 ?>
 
 
@@ -16,7 +17,7 @@ if (isset($_POST["done"]))delete_item($_GET["SKU"]);
         <div class="content__box">
             <div class="item-info__box">
                 <?php
-                list_item($_GET["SKU"]);
+                listItem($_GET["SKU"]);
                 ?>
                 <form action="#" method="post">
                     <input type="submit" class="item__center" name="done" value="delete">

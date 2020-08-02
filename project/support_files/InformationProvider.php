@@ -29,7 +29,7 @@ abstract class Product
         $var5 = isset($this->item__type) ? in_array($this->item__type, $arr) : false;
         //добавить проверку SKU
         $var6 = SomethingWithSKU::checkSKU($this->SKU);
-        if (($var1 == true) and ($var2 == true) and ($var3 == true) and ($var4 == true) and ($var5 == true) and ($var6 == true))
+        if ($var1 and $var2 and $var3 and $var4 and $var5 and $var6)
             return true;
         else
             return false;
@@ -59,9 +59,12 @@ class SizeProduct extends Product
 
     public static function fromDB($SKU)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
+
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN
+    TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
         $product = new SizeProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"],
+            $row["item__type"]);
         $product->size = $row["size"];
         return $product;
     }
@@ -69,7 +72,8 @@ class SizeProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>size=" . $this->size . "</span></td>";
@@ -88,16 +92,20 @@ class SizeProduct extends Product
             return false;
         }
         $var1 = isset($this->size) ? $this->size != "" : false;
-        if ($var1 == true)
-            return true;
-        else
-            return false;
+        return ($var1 == true) ? true : false;
+        //if ($var1 == true)
+        //    return true;
+        //else
+        //    return false;
     }
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeSize` (`SKU`, `size`) VALUES ('$this->SKU','$this->size')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`,
+                       `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price',
+                                                            '$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeSize` (`SKU`,
+                        `size`) VALUES ('$this->SKU','$this->size')");
     }
 }
 
@@ -119,9 +127,11 @@ class DimensionalProduct extends Product
 
     public static function fromDB($SKU)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product`
+    JOIN TypeHWL on Product.SKU = TypeHWL.SKU WHERE Product.SKU='$SKU'");
         $product = new DimensionalProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"],
+            $row["item__type"]);
         $product->height = $row["height"];
         $product->width = $row["width"];
         $product->length = $row["length"];
@@ -131,10 +141,12 @@ class DimensionalProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
-        echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x" . $this->length . "</span></td>";
+        echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x"
+            . $this->length . "</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
     }
@@ -161,8 +173,11 @@ class DimensionalProduct extends Product
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeHWL` (`SKU`, `height`, `width`, `length`) VALUES ('$this->SKU','$this->height','$this->width','$this->length')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`,
+                       `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price',
+                                                            '$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeHWL` (`SKU`, `height`, `width`,
+                       `length`) VALUES ('$this->SKU','$this->height','$this->width','$this->length')");
     }
 }
 
@@ -180,9 +195,11 @@ class WeightProduct extends Product
 
     public static function fromDB($SKU)
     {
-        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
+        $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` 
+                                            JOIN TypeWeight  on Product.SKU = TypeWeight.SKU WHERE Product.SKU='$SKU'");
         $product = new WeightProduct();
-        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"], $row["image__link"], $row["item__type"]);
+        Product::initializeProduct($product, $row["SKU"], $row["name"], $row["price"],
+            $row["image__link"], $row["item__type"]);
         $product->weight = $row["weight"];
         return $product;
     }
@@ -190,7 +207,8 @@ class WeightProduct extends Product
     public function outputInfo()
     {
         echo "<div class=\"info__box\">";
-        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\"" . $this->image__link . "\" alt=\"pic\"></a>";
+        echo "<a href=\"item_info.php?SKU=" . $this->SKU . "&name=" . $this->name . "\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
         echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
@@ -218,18 +236,22 @@ class WeightProduct extends Product
 
     public function persistToDB()
     {
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` (`SKU`, `name`, `price`, `image__link`, `item__type`) VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
-        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` (`SKU`, `weight`) VALUES ('$this->SKU','$this->weight')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `Product` 
+                        (`SKU`, `name`, `price`, `image__link`, `item__type`) 
+                        VALUES ('$this->SKU', '$this->name', '$this->price','$this->image__link','$this->item__type')");
+        DataAccessService::getDataAccessor()->executeQuery("INSERT INTO `TypeWeight` 
+                        (`SKU`, `weight`) 
+                        VALUES ('$this->SKU','$this->weight')");
     }
 }
 
 
 class SomethingWithSKU
 {
-   //public $SKU;
-   //public function __construct()
-   //{
-   //}
+    //public $SKU;
+    //public function __construct()
+    //{
+    //}
 
     private static $instance = null;
 
@@ -247,17 +269,18 @@ class SomethingWithSKU
         do {
             $SKU = $this->randomSKU();
         } while ($this->checkSKU($SKU) == false);
-        return  strtoupper (mb_substr($SKU, 0, 8));
+        return strtoupper(mb_substr($SKU, 0, 8));
     }
 
     public function randomSKU()
     {
-        return hash('md5',rand());
+        return hash('md5', rand());
     }
 
     public static function checkSKU($SKU)
     {
-        $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT * FROM `Product` WHERE SKU='$SKU'");
+        $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT * FROM `Product`
+                                                                                            WHERE SKU='$SKU'");
         $row = mysqli_fetch_assoc($getResult);
         if ($row["SKU"] == false)
             return true;

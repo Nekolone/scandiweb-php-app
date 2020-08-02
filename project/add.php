@@ -53,7 +53,7 @@ include_once "support_files/save_add_info.php";
 
                     <div class="size" id="size">
                         <label>Size </label><br>
-                        <input type="text" name="size " value="<?= $size ?>"><br><br>
+                        <input type="text" name="size" value="<?= $size ?>"><br><br>
                     </div>
 
 
@@ -101,7 +101,6 @@ include_once "support_files/save_add_info.php";
                             echo "ERRoR";
                     ?>
 
-
                     <input type="submit" name="done">
                 </form>
             </div>
@@ -111,3 +110,4 @@ include_once "support_files/save_add_info.php";
 </body>
 
 </html>
+

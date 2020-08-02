@@ -20,7 +20,7 @@ isset($_POST["done"])?header("Location:search_list.php?search=".$_POST["search"]
         <div class="content__box">
             <div class="item__box">
                 <?php
-                 list_result();
+                 listResult();
                 ?>
                 <div class="info__box">
                     <a href="#">
