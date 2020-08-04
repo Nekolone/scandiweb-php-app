@@ -1,0 +1,179 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Open Sans, serif;
+    font-size: 15px;
+    color: black;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.content__box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 5px;
+    text-align: center;
+
+
+    border: 1px solid #000;
+    text-decoration: none;
+
+
+    transition: color 0.1s linear, background-color 0.2s linear;
+}
+
+.button:hover {
+
+    background-color: #000;
+    color: #fff;
+
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/*
+all
+ */
+header {
+    width: 100%;
+
+    position: absolute;
+}
+
+header .container {
+    background-color: #bbbbbb;
+}
+
+header .container .content__box, .main .container .content__box, header .container .content__box form {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container .content__box .button {
+    width: 130px;
+}
+
+
+header .container .content__box form .button {
+    width: auto;
+}
+
+/*
+    PRODUCT LIST
+ */
+
+.main .container {
+    padding-top: 50px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.main .container .content__box .item__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 20px auto 0 auto;
+}
+
+.info__box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    width: 400px;
+    height: 250px;
+
+    margin: 10px;
+    padding: 25px 10px;
+    background-color: #bbbbbb;
+}
+
+
+.info__box a img, .info__box a {
+    width: 150px;
+    height: 200px;
+
+    margin-right: 30px;
+    outline-color:#f1f1f1;
+    outline-style: solid;
+}
+
+.info__box table td {
+    padding: 10px 10px 10px 0;
+}
+
+
+/*
+ADD PRODUCT
+ */
+
+.main .container .content__box .form__box {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+/*
+ITEM INFO
+ */
+.item-info__box {
+    display: block;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+
+.item__center {
+    margin: 0 45%;
+}
+
+
+/*
+TEST
+ */
+.test__box {
+    width: 400px;
+    height: 250px;
+    margin: 10px;
+
+    background-color: #000;
+}
+
