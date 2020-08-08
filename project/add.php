@@ -105,7 +105,7 @@ include_once "support_files/save_add_info.php";
                     }
                     ?>
 
-                    <input type="submit" name="done">
+                    <input type="submit" class="button" name="done" value="SUBMIT">
                 </form>
             </div>
         </div>

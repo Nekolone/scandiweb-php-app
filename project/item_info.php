@@ -7,7 +7,7 @@ if (isset($_POST["done"]))
 ?>
 
 
-<a class="button" href="add.php">ADD PRODUCT</a>
+<!--<a class="button" href="add.php">ADD PRODUCT</a>-->
 </div>
 </div>
 </header>
@@ -20,7 +20,7 @@ if (isset($_POST["done"]))
                 listItem($_GET["SKU"]);
                 ?>
                 <form action="#" method="post">
-                    <input type="submit" class="item__center" name="done" value="delete">
+                    <input type="submit" class="item__center button" name="done" value="delete">
                 </form>
             </div>
         </div>
