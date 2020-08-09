@@ -73,7 +73,6 @@ header .container .content__box {
 }
 header .logo {
   padding: 6px 0;
-  margin-right: 1.7%;
 }
 
 .main .container .content__box {
@@ -102,7 +101,6 @@ header .container .content__box .search__line {
   width: 90%;
   height: 23px;
 }
-
 .main .container {
   padding-top: 50px;
   height: 100vh;
@@ -151,9 +149,11 @@ header .container .content__box .search__line {
 }
 
 .item-info__box {
-  display: block;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 20px auto;
+  background-color: #cccccc;
 }
 
 .item__center {
