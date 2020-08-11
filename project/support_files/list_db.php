@@ -16,7 +16,7 @@ function listItem($SKU)
     $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`
                                                                                 WHERE SKU='$SKU'");
     $row = mysqli_fetch_assoc($getResult);
-    getProduct($row)->outputInfo();
+    getProduct($row)->outputItem();
 }
 
 function listResult()

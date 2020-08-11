@@ -73,6 +73,8 @@ header .container .content__box {
 }
 header .logo {
   padding: 6px 0;
+  min-width: 130px;
+  width: 8.5%;
 }
 
 .main .container .content__box {
@@ -101,6 +103,7 @@ header .container .content__box .search__line {
   width: 90%;
   height: 23px;
 }
+
 .main .container {
   padding-top: 50px;
   height: 100vh;
@@ -148,12 +151,29 @@ header .container .content__box .search__line {
   margin: 0 auto;
 }
 
-.item-info__box {
+.content-info__box {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px auto;
-  background-color: #cccccc;
+  padding: 25px 10px;
+  margin: 40px 0;
+  background-color: #eeeeee;
+}
+.content-info__box .item__image {
+  height: 30%;
+}
+.content-info__box img {
+  height: 266px;
+  width: 200px;
+  margin-right: 30px;
+}
+.content-info__box table tr td {
+  padding: 20px 10px;
+}
+
+.item-info__box {
+  display: block;
+  margin: 0 auto;
 }
 
 .item__center {

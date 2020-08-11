@@ -16,9 +16,13 @@ if (isset($_POST["done"]))
     <div class="container">
         <div class="content__box">
             <div class="item-info__box">
+
                 <?php
                 listItem($_GET["SKU"]);
                 ?>
+
+
+
                 <form action="#" method="post">
                     <input type="submit" class="item__center button" name="done" value="delete">
                 </form>
