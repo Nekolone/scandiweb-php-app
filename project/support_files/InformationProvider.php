@@ -89,7 +89,13 @@ class SizeProduct extends Product
 
     public function outputItem()
     {
-
+        echo "<div class=\"content-info__box\"><div class=\"item__image\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></div>";
+        echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
+        echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
+        echo "</tr><tr><td><span>Attribute:</span></td><td><span>size=" . $this->size . "</span></td>";
+        echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
+        echo "</tr></tbody></table></div></div>";
     }
 
     public function isValid()
@@ -165,7 +171,14 @@ class DimensionalProduct extends Product
 
     public function outputItem()
     {
-
+        echo "<div class=\"content-info__box\"><div class=\"item__image\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></div>";
+        echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
+        echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
+        echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x"
+            . $this->length . "</span></td>";
+        echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
+        echo "</tr></tbody></table></div></div>";
     }
 
     public function isValid()
@@ -236,6 +249,13 @@ class WeightProduct extends Product
 
     public function outputItem()
     {
+        echo "<div class=\"content-info__box\"><div class=\"item__image\"><img src=\""
+            . $this->image__link . "\" alt=\"pic\"></div>";
+        echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
+        echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . "</span></td>";
+        echo "</tr><tr><td><span>Attribute:</span></td><td><span>weight=" . $this->weight . "</span></td>";
+        echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
+        echo "</tr></tbody></table></div></div>";
 
     }
 

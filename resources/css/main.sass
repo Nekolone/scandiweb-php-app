@@ -64,9 +64,12 @@ header
       align-items: center
       display: flex
       justify-content: space-between
+
   .logo
     padding: 6px 0
-    margin-right: 1.7%
+
+    min-width: 130px
+    width: 8.5%
 
 .main .container .content__box
   align-items: center
@@ -94,8 +97,6 @@ header .container .content__box
   .search__line
     width: 90%
     height: 23px
-
-
 
 
 //PRODUCT LIST
@@ -151,10 +152,31 @@ header .container .content__box
 
 //ITEM INFO
 
+.content-info__box
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  padding: 25px 10px
+  margin: 40px 0
+  background-color: #eeeeee
+
+  .item__image
+    height: 30%
+
+  img
+    height: 266px
+    width: 200px
+
+    margin-right: 30px
+
+  table tr td
+    padding: 20px 10px
+
 .item-info__box
   display: block
-  justify-content: space-between
-  margin: 20px auto
+
+  margin: 0 auto
 
 .item__center
   margin: 0 45%
