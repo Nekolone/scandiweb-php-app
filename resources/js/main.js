@@ -20,3 +20,7 @@ function run() {
             break;
     }
 }
+
+function run_img(n) {
+    document.getElementById("ins_img").innerHTML = "<img src=\""+n+"\" alt=\"PIC\">";
+}
