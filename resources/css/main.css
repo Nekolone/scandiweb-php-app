@@ -146,9 +146,23 @@ header .container .content__box .search__line {
 }
 
 .main .container .content__box .form__box {
-  display: flex;
+  display: block;
   align-items: center;
   margin: 0 auto;
+}
+.main .container .content__box .form__box img {
+  height: 200px;
+  line-height: 200px;
+  width: 150px;
+  border-style: inset;
+  border-color: grey;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #8F8F8F;
+  color: #3F3F3F;
+  letter-spacing: 1.5px;
+  margin: 8%;
+  background-size: 150px 200px;
 }
 
 .content-info__box {
