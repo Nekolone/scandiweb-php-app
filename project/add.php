@@ -18,7 +18,8 @@ include_once "support_files/save_add_info.php";
                 <span id="ins_img"></span>
                 <form action="#" method="post">
                     <label> Image link</label><br>
-                    <input type="text" name="image__link" id="image__link" value="<?= $image__link ?>" onchange="run_img(this.value)"><br>
+                    <input type="text" name="image__link" id="image__link" value="<?= $image__link ?>"
+                           onchange="run_img(this.value)"><br>
                     <p id="ins_img"></p>
                     <label>SKU (auto generate if empty)</label><br>
                     <input type="text" name="SKU" value="<?= $SKU ?>"> <br>
