@@ -7,7 +7,6 @@ if (isset($_POST["done"]))
 ?>
 
 
-<!--<a class="button" href="add.php">ADD PRODUCT</a>-->
 </div>
 </div>
 </header>
