@@ -27,7 +27,6 @@ abstract class Product
         $var4 = isset($this->image__link) ? filter_var($this->image__link, FILTER_VALIDATE_URL) : false;
         $arr = array("0", "1", "2");
         $var5 = isset($this->item__type) ? in_array($this->item__type, $arr) : false;
-        //добавить проверку SKU
         $var6 = SomethingWithSKU::checkSKU($this->SKU);
         if ($var1 and $var2 and $var3 and $var4 and $var5 and $var6)
             return true;

@@ -23,5 +23,5 @@ require'validation.php';
         <div class="content__box">
             <div class="logo">
                 <a href="main.php"><em class="fas fa-arrow-left"></em></a>
-                <a>&nbsp;&nbsp;<?=$title?></a>
+                <a><?=$title?></a>
             </div>
