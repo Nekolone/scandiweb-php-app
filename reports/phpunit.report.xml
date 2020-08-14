@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.004888">
+    <testsuite name="Product" file="/home/drewman/Documents/Personal/bug-free-octo-spoon/project/support_files/InformationProvider.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.004888">
+      <testsuite name="SizeProductTest" file="/home/drewman/Documents/Personal/bug-free-octo-spoon/tests/Product/ProductTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.004888">
+        <testcase name="testInitializeProduct" class="SizeProductTest" classname="SizeProductTest" file="/home/drewman/Documents/Personal/bug-free-octo-spoon/tests/Product/ProductTest.php" line="33" assertions="1" time="0.004888"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
