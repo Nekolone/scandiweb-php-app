@@ -1,5 +1,6 @@
 {
   "name": "solid/php",
+  "description": "php application",
   "require": {
     "ext-mysqli": "*",
     "ext-mbstring": "*"
