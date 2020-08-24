@@ -16,6 +16,15 @@ require'validation.php';
     <script src="../resources/js/main.js"></script>
     <title><?=$title?></title>
 </head>
+<?php
+//$row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product`");
+$mysqli = new mysqli('localhost:3306', 'root', '', 'shopdb');
+$mysqli->query("SET NAMES 'utf8'");
+$getRow = $mysqli->query("SELECT * FROM `Product`");
+
+print_r($getRow->fetch_assoc());
+print_r($getRow->fetch_assoc());
+?>
 
 <body>
 <header class="header">

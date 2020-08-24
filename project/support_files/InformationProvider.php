@@ -58,7 +58,6 @@ class SizeProduct extends Product
 
     public static function fromDB($SKU)
     {
-
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product` JOIN
     TypeSize  on Product.SKU = TypeSize.SKU WHERE Product.SKU='$SKU'");
         $product = new SizeProduct();

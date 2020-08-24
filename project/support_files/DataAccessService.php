@@ -37,7 +37,7 @@ class DataAccessService
     private function __construct()
     {
 
-        //$this->mysqli = new mysqli('localhost:8085', 'admin', 'LdMQjNn5LrLj', 'shopdb');
+       // $this->mysqli = new mysqli('localhost:8085', 'admin', 'BeESfu33rfvd', 'shopdb');
 
         $this->mysqli = new mysqli('localhost:3306', 'root', '', 'shopdb');
         $this->mysqli->query("SET NAMES 'utf8'");
