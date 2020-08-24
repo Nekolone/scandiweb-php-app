@@ -1,12 +1,17 @@
 <?php
+
 $title = "PRODUCT LIST";
 include_once "header.php";
-include_once "support_files/list_db.php";
 
-isset($_POST["done"])?header("Location:search_list.php?search=".$_POST["search"]):false;
+isset($_POST["done"]) ? header("Location:search_list.php?search=" . $_POST["search"]) : false;
+
+if (isset($_POST["deleteALL"]))
+    OutputInfoService::deleteDB();
+
 ?>
+
 <form action="" method="post">
-    <input type="text" class="search__line" name="search" placeholder="<?=$_GET["search"]?>"><br>
+    <input type="text" class="search__line" name="search" placeholder="<?= $_GET["search"] ?>"><br>
     <input type="submit" class="button" name="done" value="SEARCH">
 </form>
 
@@ -19,23 +24,16 @@ isset($_POST["done"])?header("Location:search_list.php?search=".$_POST["search"]
     <div class="container">
         <div class="content__box">
             <div class="item__box">
-                <?php
-                 listResult();
 
+                <?php
+                OutputInfoService::listResult();
                 ?>
 
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
-                <div class="test__box">1</div>
             </div>
         </div>
+        <form action="#" method="post">
+            <input type="submit" class="deleteDB button" name="deleteALL" value="delete DB">
+        </form>
     </div>
 </div>
 </body>

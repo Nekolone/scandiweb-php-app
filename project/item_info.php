@@ -1,11 +1,12 @@
 <?php
+
 isset($_GET["name"]) ? $title = $_GET["name"] : $title = "ERROR";
 include_once "header.php";
-include_once "support_files/list_db.php";
-if (isset($_POST["done"]))
-    deleteItem($_GET["SKU"]);
-?>
 
+if (isset($_POST["done"]))
+    OutputInfoService::deleteItem($_GET["SKU"]);
+
+?>
 
 </div>
 </div>
@@ -17,10 +18,8 @@ if (isset($_POST["done"]))
             <div class="item-info__box">
 
                 <?php
-                listItem($_GET["SKU"]);
+                OutputInfoService::listItem($_GET["SKU"]);
                 ?>
-
-
 
                 <form action="#" method="post">
                     <input type="submit" class="item__center button" name="done" value="delete">

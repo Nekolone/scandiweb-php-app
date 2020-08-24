@@ -152,17 +152,9 @@ header .container .content__box .search__line {
 }
 .main .container .content__box .form__box img {
   height: 200px;
-  line-height: 200px;
   width: 150px;
-  border-style: inset;
-  border-color: grey;
-  border-radius: 10px;
   text-align: center;
-  background-color: #8F8F8F;
-  color: #3F3F3F;
-  letter-spacing: 1.5px;
   margin: 8%;
-  background-size: 150px 200px;
 }
 
 .content-info__box {
@@ -182,7 +174,7 @@ header .container .content__box .search__line {
   margin-right: 30px;
 }
 .content-info__box table tr td {
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 
 .item-info__box {
@@ -192,6 +184,12 @@ header .container .content__box .search__line {
 
 .item__center {
   margin: 0 45%;
+}
+
+.deleteDB {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .test__box {

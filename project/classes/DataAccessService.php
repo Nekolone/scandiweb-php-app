@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * Class DataAccessService
+ *
+ * provides access to the database
+ *
+ * предоставляет доступ к базе данных
+ *
+ */
+
 
 class DataAccessService
 {
+
     private $mysqli;
     private static $instance = null;
 
@@ -36,7 +46,6 @@ class DataAccessService
 
     private function __construct()
     {
-
        // $this->mysqli = new mysqli('localhost:8085', 'admin', 'BeESfu33rfvd', 'shopdb');
 
         $this->mysqli = new mysqli('localhost:3306', 'root', '', 'shopdb');
@@ -47,6 +56,5 @@ class DataAccessService
     {
         $this->mysqli->close();
     }
-
 
 }

@@ -1,5 +1,21 @@
 <?php
-require'validation.php';
+/**
+ * Connecting require files
+ *
+ * Подключение необходимых фалов
+ *
+ */
+include_once "classes/AddProduct.php";
+include_once "classes/OutputInfoService.php";
+include_once "classes/InfoSavingService.php";
+include_once "classes/product/Product.php";
+include_once "classes/product/SizeProduct.php";
+include_once "classes/product/DimensionalProduct.php";
+include_once "classes/product/WeightProduct.php";
+include_once "classes/SKUValidator.php";
+include_once "classes/SKUGenerator.php";
+include_once "classes/DataAccessService.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,17 +30,8 @@ require'validation.php';
     <script src="https://kit.fontawesome.com/3b00340691.js" crossorigin="anonymous"></script>
     <script src="../resources/js/jquery-3.5.1.min.js"></script>
     <script src="../resources/js/main.js"></script>
-    <title><?=$title?></title>
+    <title><?= $title ?></title>
 </head>
-<?php
-//$row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT * FROM `Product`");
-$mysqli = new mysqli('localhost:3306', 'root', '', 'shopdb');
-$mysqli->query("SET NAMES 'utf8'");
-$getRow = $mysqli->query("SELECT * FROM `Product`");
-
-print_r($getRow->fetch_assoc());
-print_r($getRow->fetch_assoc());
-?>
 
 <body>
 <header class="header">
@@ -32,5 +39,5 @@ print_r($getRow->fetch_assoc());
         <div class="content__box">
             <div class="logo">
                 <a href="main.php"><em class="fas fa-arrow-left"></em></a>
-                <a><?=$title?></a>
+                <a><?= $title ?></a>
             </div>

@@ -1,7 +1,26 @@
 <?php
+
 $title = "ADD PRODUCT";
 include_once "header.php";
-include_once "support_files/save_add_info.php";
+
+$pre_add_item = new InfoSavingService();
+
+if (isset($_POST["done"])) {
+    $pre_add_item->ifSetDone();
+
+    $adderror = AddProduct::addCheck(
+        $pre_add_item->SKU,
+        $pre_add_item->name,
+        $pre_add_item->price,
+        $pre_add_item->image__link,
+        $pre_add_item->item__type,
+        $pre_add_item->size,
+        $pre_add_item->height,
+        $pre_add_item->width,
+        $pre_add_item->length,
+        $pre_add_item->weight
+    );
+}
 
 ?>
 
@@ -17,21 +36,21 @@ include_once "support_files/save_add_info.php";
             <div class="form__box">
                 <span id="ins_img"></span>
                 <form action="#" method="post">
-                    <label> Image link</label><br>
-                    <input type="text" name="image__link" id="image__link" value="<?= $image__link ?>"
+                    <label>Image link</label><br>
+                    <input type="text" name="image__link" id="image__link" value="<?= $pre_add_item->image__link ?>"
                            onchange="run_img(this.value)"><br>
-                    <p id="ins_img"></p>
                     <label>SKU (auto generate if empty)</label><br>
-                    <input type="text" name="SKU" value="<?= $SKU ?>"> <br>
+                    <input type="text" name="SKU" value="<?= $pre_add_item->SKU ?>"> <br>
                     <label>Name</label><br>
-                    <input type="text" name="name" value="<?= $name ?>"><br>
+                    <input type="text" name="name" value="<?= $pre_add_item->name ?>"><br>
                     <label>Price</label><br>
-                    <input type="number" name="price" value="<?= $price ?>"><br>
+                    <input type="number" name="price" value="<?= $pre_add_item->price ?>"><br>
                     <label>Type</label>
 
                     <select name="item__type" id="item__type" onchange="run()">
+
                         <?php
-                        switch ($item__type) {
+                        switch ($pre_add_item->item__type) {
                             case 0:
                                 echo "<option value=\"0\" selected >Size</option>
                         <option value=\"1\" >HxWxL</option>
@@ -48,35 +67,37 @@ include_once "support_files/save_add_info.php";
                         <option value=\"2\" selected >Weight</option>";
                                 break;
                             default:
-                                throw new InvalidArgumentException("Item type is unknown:$item__type");
-
+                                throw new InvalidArgumentException("Item type is unknown:$pre_add_item->item__type");
                         }
+
                         ?>
+
                     </select><br><br>
 
 
                     <div class="size" id="size">
                         <label>Size </label><br>
-                        <input type="text" name="size" value="<?= $size ?>"><br><br>
+                        <input type="text" name="size" value="<?= $pre_add_item->size ?>"><br><br>
                     </div>
 
 
                     <div class="HWL" id="hwl">
                         <label>Height mm</label><br>
-                        <input type="number" name="height" value="<?= $height ?>"><br>
+                        <input type="number" name="height" value="<?= $pre_add_item->height ?>"><br>
                         <label>Width mm</label><br>
-                        <input type="number" name="width" value="<?= $width ?>"><br>
+                        <input type="number" name="width" value="<?= $pre_add_item->width ?>"><br>
                         <label>Length mm</label><br>
-                        <input type="number" name="length" value="<?= $length ?>"><br><br>
+                        <input type="number" name="length" value="<?= $pre_add_item->length ?>"><br><br>
                     </div>
 
                     <div class="weight" id="weight">
                         <label>Weight kg</label><br>
-                        <input type="number" name="weight" value="<?= $weight ?>"><br><br>
+                        <input type="number" name="weight" value="<?= $pre_add_item->weight ?>"><br><br>
                     </div>
+
                     <?php
 
-                    switch ($item__type) {
+                    switch ($pre_add_item->item__type) {
                         case 0:
                             echo "<script>
                         $('.size').css(\"display\", \"block\");
@@ -100,11 +121,11 @@ include_once "support_files/save_add_info.php";
                             break;
                     }
 
-                    if (isset($adderror)) {
-                        if ($adderror == 1) {
-                            echo "ERRoR";
-                        }
+
+                    if ($adderror == 1) {
+                        echo "ERRoR";
                     }
+
                     ?>
 
                     <input type="submit" class="button" name="done" value="SUBMIT">
@@ -116,4 +137,3 @@ include_once "support_files/save_add_info.php";
 </body>
 
 </html>
-
