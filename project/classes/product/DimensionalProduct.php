@@ -55,8 +55,8 @@ class DimensionalProduct extends Product
             . $this->image__link . "\" alt=\"pic\"></a>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . " €</span></td>";
-        echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x"
-            . $this->length . "</span></td>";
+        echo "</tr><tr><td><span>HxWxL:</span></td><td><span>" . $this->height . "x" . $this->width . "x"
+            . $this->length . " mm</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr></tbody></table></div></div>";
     }
@@ -67,8 +67,8 @@ class DimensionalProduct extends Product
             . $this->image__link . "\" alt=\"pic\"></div>";
         echo "<div><table><tbody><tr><td><span>Name:</span></td><td><span>" . $this->name . "</span></td>";
         echo "</tr><tr><td><span>Price:</span></td><td><span>" . $this->price . " EUR</span></td>";
-        echo "</tr><tr><td><span>Attribute:</span></td><td><span>HxWxL=" . $this->height . "x" . $this->width . "x"
-            . $this->length . "</span></td>";
+        echo "</tr><tr><td><span>HxWxL:</span></td><td><span>" . $this->height . "x" . $this->width . "x"
+            . $this->length . " mm</span></td>";
         echo "</tr><tr><td><span>SKU:</span></td><td><span>" . $this->SKU . "</span></td>";
         echo "</tr><tr><td><span>AddTime:</span></td><td><span>" . $this->addTime . "</span></td>";
         echo "</tr></tbody></table></div></div>";

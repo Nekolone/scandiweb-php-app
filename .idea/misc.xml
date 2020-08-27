@@ -3,10 +3,4 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="PhpEntryPointsManager">
-    <entry_point>
-      <entry_point TYPE="phpMethod" FQNAME="\Product outputInfo" />
-      <entry_point TYPE="phpClass" FQNAME="\Product" />
-    </entry_point>
-  </component>
 </project>
