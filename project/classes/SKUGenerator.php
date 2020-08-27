@@ -15,6 +15,13 @@ class SKUGenerator
 
     private static $instance = null;
 
+    private $validator;
+
+    public function __construct()
+    {
+        $this->validator=new SKUValidator();
+    }
+
     public static function getSKUAcc()
     {
         if (self::$instance == null) {
@@ -27,7 +34,7 @@ class SKUGenerator
     {
         do {
             $SKU = $this->randomSKU();
-        } while (SKUValidator::checkSKU($SKU) == false);
+        } while ($this->validator->checkSKU($SKU) == false);
         return strtoupper(mb_substr($SKU, 0, 8));
     }
 

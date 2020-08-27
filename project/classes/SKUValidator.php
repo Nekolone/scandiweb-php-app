@@ -13,6 +13,7 @@
 class SKUValidator
 {
 
+
     public static function checkSKU($SKU)
     {
         $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT * FROM `Product`
