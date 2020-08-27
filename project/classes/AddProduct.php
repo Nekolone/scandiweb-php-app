@@ -14,11 +14,29 @@ class AddProduct
 {
 
     public static function addCheck(
-        $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+        $SKU,
+        $name,
+        $price,
+        $image__link,
+        $item__type,
+        $size,
+        $height,
+        $width,
+        $length,
+        $weight
     )
     {
         $product = self::createProduct(
-            $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+            $SKU,
+            $name,
+            $price,
+            $image__link,
+            $item__type,
+            $size,
+            $height,
+            $width,
+            $length,
+            $weight
         );
         if ($product->isValid()) {
             $product->persistToDB();
@@ -28,7 +46,16 @@ class AddProduct
     }
 
     public static function createProduct(
-        $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+        $SKU,
+        $name,
+        $price,
+        $image__link,
+        $item__type,
+        $size,
+        $height,
+        $width,
+        $length,
+        $weight
     )
     {
         switch ($item__type) {
@@ -36,7 +63,14 @@ class AddProduct
                 return SizeProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $size);
             case 1:
                 return DimensionalProduct::buildProduct(
-                    $SKU, $name, $price, $image__link, $item__type, $height, $width, $length
+                    $SKU,
+                    $name,
+                    $price,
+                    $image__link,
+                    $item__type,
+                    $height,
+                    $width,
+                    $length
                 );
             case 2:
                 return WeightProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $weight);
