@@ -13,7 +13,7 @@
 class OutputInfoService
 {
 
-    static function listSearchResult($search)
+    public static function listSearchResult($search)
     {
         $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`
                                                                                 WHERE name like '%$search%'");
@@ -22,14 +22,14 @@ class OutputInfoService
         }
     }
 
-    static function listItem($SKU)
+    public static function listItem($SKU)
     {
         $row = DataAccessService::getDataAccessor()->getSingleResultFromQuery("SELECT SKU, item__type FROM `Product`
                                                                                 WHERE SKU='$SKU'");
         self::getProduct($row)->outputItem();
     }
 
-    static function listResult()
+    public static function listResult()
     {
         $getResult = DataAccessService::getDataAccessor()->getQueryResults("SELECT SKU, item__type FROM `Product`");
         while ($row = mysqli_fetch_assoc($getResult)) {
@@ -37,7 +37,7 @@ class OutputInfoService
         }
     }
 
-    static function deleteItem($SKU)
+    public static function deleteItem($SKU)
     {
         DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeSize` WHERE SKU='$SKU'");
         DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeHWL` WHERE SKU='$SKU'");
@@ -46,7 +46,7 @@ class OutputInfoService
         header("Location:main.php");
     }
 
-    static function deleteDB()
+    public static function deleteDB()
     {
         DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeSize`");
         DataAccessService::getDataAccessor()->getQueryResults("DELETE FROM `TypeHWL`");
@@ -56,7 +56,7 @@ class OutputInfoService
     }
 
 
-    static function getProduct($row)
+    private static function getProduct($row)
     {
         $SKU = $row["SKU"];
         switch ($row["item__type"]) {

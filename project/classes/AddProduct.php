@@ -13,10 +13,13 @@
 class AddProduct
 {
 
-    static function addCheck($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight)
+    public static function addCheck(
+        $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+    )
     {
-        $product = self::createProduct($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length,
-            $weight);
+        $product = self::createProduct(
+            $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+        );
         if ($product->isValid()) {
             $product->persistToDB();
             header("Location:main.php");
@@ -24,15 +27,17 @@ class AddProduct
         return 1;
     }
 
-    static function createProduct($SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length,
-                                  $weight)
+    public static function createProduct(
+        $SKU, $name, $price, $image__link, $item__type, $size, $height, $width, $length, $weight
+    )
     {
         switch ($item__type) {
             case 0:
                 return SizeProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $size);
             case 1:
-                return DimensionalProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $height,
-                    $width, $length);
+                return DimensionalProduct::buildProduct(
+                    $SKU, $name, $price, $image__link, $item__type, $height, $width, $length
+                );
             case 2:
                 return WeightProduct::buildProduct($SKU, $name, $price, $image__link, $item__type, $weight);
             default:

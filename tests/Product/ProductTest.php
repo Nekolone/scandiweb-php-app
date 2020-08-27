@@ -20,7 +20,7 @@ class TestInitializeProduct extends TestCase
 
     protected function setUp(): void
     {
-       $this->sizeProduct = AddProduct::createProduct(
+        $this->sizeProduct = AddProduct::createProduct(
             "721DCCDA",
             "Chevrolet",
             "5999",
@@ -57,7 +57,8 @@ class TestInitializeProduct extends TestCase
     {
         $this->assertEquals(
             "https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg",
-            $this->sizeProduct->image__link);
+            $this->sizeProduct->image__link
+        );
     }
 
     public function testEqualsType()
@@ -75,7 +76,6 @@ class TestInitializeProduct extends TestCase
 //
     //    $this->assertEquals(true, $this->sizeProduct->isValid());
     //}
-
 
 
 }
