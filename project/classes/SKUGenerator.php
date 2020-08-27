@@ -17,6 +17,7 @@ class SKUGenerator
 
     private $validator;
 
+
     public function __construct()
     {
         $this->validator=new SKUValidator();
